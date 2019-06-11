@@ -1,0 +1,86 @@
+<div mdcCard class="ch-lvl-{{char.rarity}}">
+  <div fxLayout="row wrap" fxLayoutAlign="start center">
+    <div fxFlex="50" fxFlex.gt-md="33" fxLayout="row" fxLayoutAlign="start center">
+      <div mdcInputField><button mdcIconButton class="material-icons" (click)="emitRemove()">close</button></div>
+      <div class="card-heading">{{char.name}}</div>
+    </div>
+    <div fxFlex="50" fxFlex.gt-md="33" fxLayout="row" fxLayoutAlign="space-between center">
+      <!-- 精英化 -->
+      <div mdcFormField>
+        <button mdcButton class="btnTitle">精英化</button>
+      </div>
+      <div mdcTextField dense class="input-field">
+        <button mdcButton dense (click)="onEvolveClick(false,false)">
+          <i mdcButtonIcon class="material-icons">remove</i>
+        </button>
+        <input mdcTextFieldInput #input1="ngModel" type="number" (change)="onInputChange()" [(ngModel)]="data.ce">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">当前</label>
+        <button mdcButton dense (click)="onEvolveClick(false,true)">
+          <i mdcButtonIcon class="material-icons">add</i>
+        </button>
+      </div>
+      <div mdcTextField dense class="input-field">
+        <button mdcButton dense (click)="onEvolveClick(true,false)">
+          <i mdcButtonIcon class="material-icons">remove</i>
+        </button>
+        <input mdcTextFieldInput #input1="ngModel" type="number" (change)="onInputChange()" [(ngModel)]="data.te">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">目标</label>
+        <button mdcButton dense (click)="onEvolveClick(true,true)">
+          <i mdcButtonIcon class="material-icons">add</i>
+        </button>
+      </div>
+    </div>
+    <div fxFlex="50" fxFlex.gt-md="33" fxLayout="row" fxLayoutAlign="space-between center">
+      <!-- 通用技能 -->
+      <div mdcFormField>
+        <button mdcButton class="btnTitle">全技能</button>
+      </div>
+      <div mdcTextField dense class="input-field">
+        <button mdcButton dense (click)="onSkillClick(false,false)">
+          <i mdcButtonIcon class="material-icons">remove</i>
+        </button>
+        <input mdcTextFieldInput #input1="ngModel" type="number" (change)="onInputChange()" [(ngModel)]="data.cs">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">当前</label>
+        <button mdcButton dense (click)="onSkillClick(false,true)">
+          <i mdcButtonIcon class="material-icons">add</i>
+        </button>
+      </div>
+      <div mdcTextField dense class="input-field">
+        <button mdcButton dense (click)="onSkillClick(true,false)">
+          <i mdcButtonIcon class="material-icons">remove</i>
+        </button>
+        <input mdcTextFieldInput #input1="ngModel" type="number" (change)="onInputChange()" [(ngModel)]="data.ts">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">目标</label>
+        <button mdcButton dense (click)="onSkillClick(true,true)">
+          <i mdcButtonIcon class="material-icons">add</i>
+        </button>
+      </div>
+    </div>
+    <div fxFlex="50" fxFlex.gt-md="33" fxLayout="row" fxLayoutAlign="space-between center" *ngFor="let idx of data.specials">
+      <!-- 专精技能 -->
+      <div mdcFormField>
+        <button mdcButton class="btnTitle">{{char.sskillCosts[idx].skillName}}</button>
+      </div>
+      <div mdcTextField dense class="input-field">
+        <button mdcButton dense (click)="onSpecialClick(idx,false,false)">
+          <i mdcButtonIcon class="material-icons">remove</i>
+        </button>
+        <input mdcTextFieldInput #input1="ngModel" type="number" (change)="onInputChange()" [(ngModel)]="data.css[idx]">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">当前</label>
+        <button mdcButton dense (click)="onSpecialClick(idx,false,true)">
+          <i mdcButtonIcon class="material-icons">add</i>
+        </button>
+      </div>
+      <div mdcTextField dense class="input-field">
+        <button mdcButton dense (click)="onSpecialClick(idx,true,false)">
+          <i mdcButtonIcon class="material-icons">remove</i>
+        </button>
+        <input mdcTextFieldInput #input1="ngModel" type="number" (change)="onInputChange()" [(ngModel)]="data.tss[idx]">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">目标</label>
+        <button mdcButton dense (click)="onSpecialClick(idx,true,true)">
+          <i mdcButtonIcon class="material-icons">add</i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

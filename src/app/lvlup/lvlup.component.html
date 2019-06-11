@@ -1,0 +1,250 @@
+<div fxLayout="row wrap">
+  <div fxFlex="100%" fxFlex.gt-md="50%" fxLayout="row wrap" fxLayoutAlign="space-around start">
+    <div fxFlex="30">
+      <div mdcSelect class="input-field">
+        <select mdcSelectControl [(ngModel)]="star" (change)="onStarChange()">
+          <option value="6" selected>6★</option>
+          <option value="5">5★</option>
+          <option value="4">4★</option>
+          <option value="3">3★</option>
+          <option value="2">2★</option>
+          <option value="1">1★</option>
+        </select>
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">星级</label>
+      </div>
+    </div>
+
+    <div fxFlex="30">
+      <div mdcSelect class="input-field">
+        <select mdcSelectControl [(value)]="lsMap">
+          <option value="5" selected>LS-5</option>
+        </select>
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">经验本</label>
+      </div>
+    </div>
+
+    <div fxFlex="30">
+      <div mdcSelect class="input-field">
+        <select mdcSelectControl [(value)]="ceMap">
+          <option value="5" selected>CE-5</option>
+        </select>
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">金币本</label>
+      </div>
+    </div>
+
+    <div fxFlex="30">
+      <div mdcTextField dense class="input-field">
+        <button mdcButton dense (click)="onEvolveChange(false,false)">
+          <i mdcButtonIcon class="material-icons">remove</i>
+        </button>
+        <input mdcTextFieldInput #input1="ngModel" type="number" [(ngModel)]="currentEvolve" placeholder="当前精英化">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">当前精英化</label>
+        <button mdcButton dense (click)="onEvolveChange(false,true)">
+          <i mdcButtonIcon class="material-icons">add</i>
+        </button>
+      </div>
+    </div>
+
+    <div fxFlex="30">
+      <div mdcTextField dense class="input-field">
+        <button mdcButton dense (click)="currentLvl=1">
+          <i mdcButtonIcon class="material-icons">first_page</i>
+        </button>
+        <input mdcTextFieldInput #input1="ngModel" type="number" [(ngModel)]="currentLvl" placeholder="当前等级">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">当前等级</label>
+        <button mdcButton dense (click)="toMaxLvl(true)">
+          <i mdcButtonIcon class="material-icons">last_page</i>
+        </button>
+      </div>
+    </div>
+
+    <div fxFlex="30">
+      <div mdcTextField dense class="input-field">
+        <input mdcTextFieldInput #input1="ngModel" type="number" [(ngModel)]="currentExp" placeholder="当前经验">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">当前经验</label>
+        <button mdcButton dense (click)="currentExp=0">
+          <i mdcButtonIcon class="material-icons">close</i>
+        </button>
+      </div>
+    </div>
+
+    <div fxFlex="30">
+      <div mdcTextField dense class="input-field">
+        <button mdcButton dense (click)="onEvolveChange(true,false)">
+          <i mdcButtonIcon class="material-icons">remove</i>
+        </button>
+        <input mdcTextFieldInput #input1="ngModel" type="number" [(ngModel)]="targetEvolve" placeholder="目标精英化">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">目标精英化</label>
+        <button mdcButton dense (click)="onEvolveChange(true,true)">
+          <i mdcButtonIcon class="material-icons">add</i>
+        </button>
+      </div>
+
+    </div>
+
+    <div fxFlex="30">
+      <div mdcTextField dense class="input-field">
+        <button mdcButton dense (click)="targetLvl=1">
+          <i mdcButtonIcon class="material-icons">first_page</i>
+        </button>
+        <input mdcTextFieldInput #input1="ngModel" type="number" [(ngModel)]="targetLvl" placeholder="目标等级">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">目标等级</label>
+        <button mdcButton dense (click)="toMaxLvl(false)">
+          <i mdcButtonIcon class="material-icons">last_page</i>
+        </button>
+      </div>
+
+    </div>
+
+
+    <div fxFlex="30">
+      <div mdcTextField dense class="input-field">
+        <input mdcTextFieldInput #input1="ngModel" type="number" [(ngModel)]="gold" placeholder="已有金币">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">已有金币</label>
+        <button mdcButton dense (click)="gold=0">
+          <i mdcButtonIcon class="material-icons">close</i>
+        </button>
+      </div>
+
+    </div>
+
+    <div fxFlex="22">
+      <div mdcTextField dense class="input-field">
+        <input mdcTextFieldInput #input1="ngModel" type="number" [(ngModel)]="bookBasic" placeholder="基础经验书">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">基础经验书</label>
+        <button mdcButton dense (click)="bookBasic=0">
+          <i mdcButtonIcon class="material-icons">close</i>
+        </button>
+      </div>
+
+    </div>
+
+    <div fxFlex="22">
+      <div mdcTextField dense class="input-field">
+        <input mdcTextFieldInput #input1="ngModel" type="number" [(ngModel)]="bookPrimary" placeholder="初级经验书">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">初级经验书</label>
+        <button mdcButton dense (click)="bookPrimary=0">
+          <i mdcButtonIcon class="material-icons">close</i>
+        </button>
+      </div>
+
+    </div>
+
+    <div fxFlex="22">
+      <div mdcTextField dense class="input-field">
+        <input mdcTextFieldInput #input1="ngModel" type="number" [(ngModel)]="bookMiddle" placeholder="中级经验书">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">中级经验书</label>
+        <button mdcButton dense (click)="bookMiddle=0">
+          <i mdcButtonIcon class="material-icons">close</i>
+        </button>
+      </div>
+
+    </div>
+
+    <div fxFlex="22">
+      <div mdcTextField dense class="input-field">
+        <input mdcTextFieldInput #input1="ngModel" type="number" [(ngModel)]="bookAdvanced" placeholder="">
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">高级经验书</label>
+        <button mdcButton dense (click)="bookAdvanced=0">
+          <i mdcButtonIcon class="material-icons">close</i>
+        </button>
+      </div>
+    </div>
+    <div fxFlex="100" fxLayoutAlign="center center">
+      <button mdcButton raised class="btnCalc" (click)="calc()">计算</button>
+    </div>
+  </div>
+
+  <div fxFlex="100%" fxFlex.gt-md="50%" fxLayout="row wrap" fxLayoutAlign="space-around start">
+    <div mdcCard>
+      <div class="custom-card-group-heading">{{star}}★ 精{{currentEvolve}}.LV{{currentLvl}} → 精{{targetEvolve}}.LV{{targetLvl}}</div>
+      <hr mdcListDivider>
+      <table>
+        <tbody>
+          <tr>
+            <th>体力总计</th>
+            <td>
+              <b>{{math.ceil(lsAp+ceAp)}}</b> <sub> = {{math.ceil(lsAp)}} + {{math.ceil(ceAp)}}</sub>
+            </td>
+          </tr>
+          <tr>
+            <th>经验</th>
+            <td>
+              <b>{{math.ceil(lvlupExp-expMinus>0?(lvlupExp-expMinus):0)}}</b> <sub> = {{math.ceil(lvlupExp)}} - {{math.ceil(expMinus)}}</sub>
+            </td>
+          </tr>
+          <tr>
+            <th>LS体力 <sub>场数</sub></th>
+            <td>
+              <b>{{math.ceil(lsAp)}}</b> <sub> = 30 * {{math.ceil(lsCount)}}</sub>
+            </td>
+          </tr>
+          <tr>
+            <th>金币</th>
+            <td>
+              <b>{{math.ceil(lvlupGold+evolveGold-goldMinus>0?(lvlupGold+evolveGold-goldMinus):0)}}</b> <sub> =
+                {{math.ceil(lvlupGold+evolveGold)}} - {{goldMinus}}</sub>
+            </td>
+          </tr>
+          <tr>
+            <th>CE体力 <sub>场数</sub></th>
+            <td>
+              <b>{{math.ceil(ceAp)}}</b> <sub> = 30 * {{math.ceil(ceCount)}}</sub>
+            </td>
+          </tr>
+          <tr>
+            <th>升级金币</th>
+            <td>
+              {{math.ceil(lvlupGold)}}
+            </td>
+          </tr>
+          <tr>
+            <th>精英化金币</th>
+            <td>
+              {{math.ceil(evolveGold)}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- <table>
+      <thead>
+        <tr>
+          <th>资源</th><td>
+          <th>需求</th><td>
+        </td></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>体力总计</th><td>
+          <b>{{lsAp+ceAp}}</b> <sub>= {{lsAp}} + {{ceAp}}</sub>
+        </td></tr>
+        <tr>
+          <th>经验</th><td>
+          <b>{{lvlupExp-expMinus>0?(lvlupExp-expMinus):0}}</b> <sub>= {{lvlupExp}} - {{expMinus}}</sub>
+        </td></tr>
+        <tr>
+          <th>LS体力 <sub>场数</sub></th><td>
+          <b>{{lsAp}}</b> <sub>= 30 * {{lsCount}}</sub>
+        </td></tr>
+        <tr>
+          <th>金币</th><td>
+          <b>{{lvlupGold+evolveGold-goldMinus>0?(lvlupGold+evolveGold-goldMinus):0}}</b> <sub>=
+              {{lvlupGold+evolveGold}} - {{goldMinus}}</sub>
+        </td></tr>
+        <tr>
+          <th>CE体力 <sub>场数</sub></th><td>
+          <b>{{ceAp}}</b> <sub>= 30 * {{ceCount}}</sub>
+        </td></tr>
+        <tr>
+          <th>升级金币</th><td>
+          {{lvlupGold}}
+        </td></tr>
+        <tr>
+          <th>精英化金币</th><td>
+          {{evolveGold}}
+        </td></tr>
+      </tbody>
+    </table> -->
+  </div>
+</div>

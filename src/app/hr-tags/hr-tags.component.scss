@@ -1,0 +1,39 @@
+@import "../styles/custom.scss";
+
+.btnTitle {
+  background-color: $mdc-theme-secondary;
+  color: white;
+}
+
+.no-padding {
+  padding: 0px, 0px, 0px, 0px;
+}
+
+.mdc-chip {
+  margin: 2px;
+}
+
+.mdc-chip--selected {
+  background-color: $color-3;
+}
+
+.mdc-button.selected {
+  background-color: $mdc-theme-secondary;
+  color: $mdc-theme-primary;
+}
+
+#btnClear {
+  background-color: #d07057;
+  color: #fff;
+}
+
+.btnStarGroup .mdc-button {
+  padding: 0 0.25em;
+  min-width: 0px;
+}
+
+.btnRowTitle {
+  padding: 0 0.25em;
+  min-width: 40px;
+  margin: 0px;
+}

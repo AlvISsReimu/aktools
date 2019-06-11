@@ -1,0 +1,65 @@
+@import "./styles/custom.scss";
+@import "@material/theme/mixins";
+
+[mdcDrawerHeader],
+[mdcDrawerToolbarSpacer],
+[mdcToolbar] {
+  // color the header variants the same way as the toolbar:
+  @include mdc-theme-prop(background-color, primary);
+  @include mdc-theme-prop(color, on-primary);
+}
+[mdcDrawerHeader] {
+  height: 128px;
+}
+.drawer-header {
+  height: 100px;
+}
+[mdcDrawerToolbarSpacer],
+[mdcToolbar],
+[mdcToolbarRow] {
+  height: 64px;
+}
+.container {
+  margin: auto;
+  max-width: 1400px;
+  padding: 0.5em;
+}
+.mdc-toolbar__title {
+  font-size: 1.125em;
+  color: #ababab;
+  padding: 0.25em;
+}
+.mdc-toolbar__title.router-active {
+  color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 1.125em 0.5em 1.125em 0.5em;
+  border-color: #ffffff;
+}
+
+[mdcDrawerHeaderContent] .mdc-toolbar__title.router-active {
+  border: none;
+}
+
+.router-active.small {
+  font-size: 80%;
+}
+
+.toolbar-titles {
+  height: 100%;
+  align-items: center;
+  display: flex;
+}
+
+.img-header {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.img-title {
+  max-width: 100%;
+  max-height: 100%;
+  width: 48px;
+  height: 48px;
+}

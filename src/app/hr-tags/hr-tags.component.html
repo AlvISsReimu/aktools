@@ -1,0 +1,50 @@
+<div fxLayout="row inline">
+  <div><button mdcButton raised id="btnClear" (click)="clearTags()">清空</button></div>
+  <!-- 尚未实现，暂时隐藏 -->
+  <div fxShow="false" fxShow.lt-sm="false">
+    <button mdcButton outlined raised>名称</button>
+    <button mdcButton outlined>图片</button>
+    <button mdcButton outlined>小</button>
+    <button mdcButton outlined>中</button>
+    <button mdcButton outlined>大</button>
+    <button mdcButton outlined>特大</button>
+  </div>
+</div>
+
+<div class="no-padding btnStarGroup">
+  <button mdcButton outlined dense [raised]="selectedStars[0]" (click)="onStarBtnClick(0)">
+    ALL
+  </button>
+  <button mdcButton outlined dense [raised]="selectedStars[6]" (click)="onStarBtnClick(6)">
+    <i mdcButtonIcon class="material-icons">star</i>6
+  </button>
+  <button mdcButton outlined dense [raised]="selectedStars[5]" (click)="onStarBtnClick(5)">
+    <i mdcButtonIcon class="material-icons">star</i>5
+  </button>
+  <button mdcButton outlined dense [raised]="selectedStars[4]" (click)="onStarBtnClick(4)">
+    <i mdcButtonIcon class="material-icons">star</i>4
+  </button>
+  <button mdcButton outlined dense [raised]="selectedStars[3]" (click)="onStarBtnClick(3)">
+    <i mdcButtonIcon class="material-icons">star</i>3
+  </button>
+  <button mdcButton outlined dense [raised]="selectedStars[2]" (click)="onStarBtnClick(2)">
+    <i mdcButtonIcon class="material-icons">star</i>2
+  </button>
+  <button mdcButton outlined dense [raised]="selectedStars[1]" (click)="onStarBtnClick(1)">
+    <i mdcButtonIcon class="material-icons">star</i>1
+  </button>
+</div>
+
+<table>
+  <tbody>
+    <tr *ngFor=" let tagrow of tagrows">
+      <td>
+        <button mdcButton class="btnRowTitle">{{tagrow.title}}</button>
+      </td>
+      <td>
+        <button mdcButton outlined [raised]="selectedTags.includes(tag)" (click)="onTagClick(tag)"
+          *ngFor="let tag of tagrow.tags">{{tag}}</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

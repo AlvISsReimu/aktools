@@ -1,0 +1,54 @@
+<div fxLayout="row wrap">
+  <div fxFlex="100" fxFlex.gt-sm="50%" ngClass.gt-sm="padding-x-1" fxLayout="row wrap" fxLayoutAlign="space-between start">
+    <div fxFlex="26">
+      <div mdcSelect class="input-field">
+        <select mdcSelectControl [(ngModel)]="star" (change)="onFilterChange()">
+          <option value="6" selected>6★</option>
+          <option value="5">5★</option>
+          <option value="4">4★</option>
+          <option value="3">3★</option>
+          <option value="2">2★</option>
+          <option value="1">1★</option>
+        </select>
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">星级</label>
+      </div>
+    </div>
+    <div fxFlex="26">
+      <div mdcSelect class="input-field">
+        <select mdcSelectControl [(ngModel)]="prof" (change)="onFilterChange()">
+          <option value="辅助" selected>辅助</option>
+          <option value="近卫">近卫</option>
+          <option value="先锋">先锋</option>
+          <option value="特种">特种</option>
+          <option value="重装">重装</option>
+          <option value="术师">术师</option>
+          <option value="狙击">狙击</option>
+          <option value="医疗">医疗</option>
+        </select>
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">职业</label>
+      </div>
+    </div>
+    <div fxFlex="26">
+      <div mdcSelect class="input-field">
+        <select mdcSelectControl [(ngModel)]="char">
+          <option value="{{ch}}" *ngFor="let ch of joindChars">{{ch}}</option>
+        </select>
+        <label mdcFloatingLabel class="mdc-floating-label--float-above">干员</label>
+      </div>
+    </div>
+    <div fxFlex="10">
+      <div mdcInputField>
+        <button mdcIconButton class="material-icons" (click)="onCharAdd()">add</button>
+      </div>
+    </div>
+    <div fxFlex="100">
+      <div *ngFor="let chn of selectedChars">
+        <app-char-mat-charcard [char]="cmMap[chn]" (reportRemove)="onCharRemove($event)"
+          (reportMats)="onMatReport($event)"></app-char-mat-charcard>
+      </div>
+    </div>
+  </div>
+  <div fxFlex="100" fxFlex.gt-sm="50%" ngClass.gt-sm="padding-x-1" fxLayout="row" fxLayoutAlign="center start">
+    <app-char-mat-matcard [allmats]="mats" [smats]="summarizedMats"></app-char-mat-matcard>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div mdcCard class="m-lvl-{{item.rarity}}" [ngClass]="{'op-card': itemdata.lack===0}">
+  <div fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="img-icon-box" fxFlex="15" fxFlex.gt-xs="23"><img class="img-icon"
+          src="./assets/img/material/{{item.icon}}.png" /></div>
+      <div class="material-detail" fxLayout="column" fxFlex="60" fxFlex.gt-xs="50">
+        <div class="card-title">{{item.name}}</div>
+        <div class="material-source" *ngFor="let s of item.source | keyvalue">{{s.key}} <sub>{{s.value}}</sub></div>
+      </div>
+      <div class="material-detail" fxLayout="column" fxFlex="23" fxFlex.gt-xs="25" fxLayoutAlign="end end">
+        <div>
+          <button mdcButton class="need-button" [ngClass]="{'notice': itemdata.lack!==0}"
+            disabled>{{itemdata.lack}}</button>
+        </div>
+        <div>
+          <button mdcButton dense [raised]="itemdata.canMerge" class="btnMerge" (click)="doMerge()" [disabled]="!(itemdata.canMerge)"><i mdcButtonIcon class="material-icons">merge_type</i></button>
+        </div>
+      </div>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxFlex="49">
+        <div mdcTextField dense class="input-field">
+          <button mdcButton dense (click)="itemdata.need=itemdata.need-(itemdata.need>0?1:0);onInputChange()">
+            <i mdcButtonIcon class="material-icons">remove</i>
+          </button>
+          <input mdcTextFieldInput #input1="ngModel" type="number" [(ngModel)]="itemdata.need"
+            (change)="onInputChange()">
+          <label mdcFloatingLabel class="mdc-floating-label--float-above">需要</label>
+          <button mdcButton dense (click)="itemdata.need=itemdata.need+1;onInputChange()">
+            <i mdcButtonIcon class="material-icons">add</i>
+          </button>
+        </div>
+      </div>
+      <div fxFlex="49">
+        <div mdcTextField dense class="input-field">
+          <button mdcButton dense (click)="itemdata.have=itemdata.have-(itemdata.have>0?1:0);onInputChange()">
+            <i mdcButtonIcon class="material-icons">remove</i>
+          </button>
+          <input mdcTextFieldInput #input1="ngModel" type="number" [(ngModel)]="itemdata.have"
+            (change)="onInputChange()">
+          <label mdcFloatingLabel class="mdc-floating-label--float-above">已有</label>
+          <button mdcButton dense (click)="itemdata.have=itemdata.have+1;onInputChange()">
+            <i mdcButtonIcon class="material-icons">add</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

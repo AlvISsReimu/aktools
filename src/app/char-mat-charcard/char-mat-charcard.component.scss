@@ -1,0 +1,74 @@
+@import '../styles/custom.scss';
+.mdc-button--dense {
+  min-width: 20px;
+  margin: 0;
+  padding: 0;
+}
+.mdc-button--dense .material-icons{
+  font-size: 16px;
+}
+.input-field{
+  width: 100%;
+  margin: 0.25em;
+}
+input, select {
+  text-align: center;
+}
+[mdcCard] {
+    max-width: 100%;
+    width: 100%;
+    margin: 0.25em 0;
+    padding: 0.25em;
+    border: 0.125em solid rgba(0, 0, 0, 0.125);
+    border-radius: 2em 0.5em 0.5em 0.5em;
+  
+    .card-heading {
+      color: $mdc-theme-primary;
+      padding: 8px 16px;
+      text-align: center;
+    }
+  
+    .material-source {
+      color: $mdc-theme-secondary;
+      font-size: 0.875em;
+    }
+    .material-detail {
+      color: $mdc-theme-primary;
+      padding: 0.25em;
+    }
+  }
+  
+  .mdc-card.ch-lvl-5 {
+    border-color: #d0694e;
+  }
+  .mdc-card.ch-lvl-4 {
+    border-color: #f9ce8c;
+  }
+  .mdc-card.ch-lvl-3 {
+    border-color: #589bad;
+  }
+  .mdc-card.ch-lvl-2 {
+    border-color: #7ebc59;
+  }
+  .mdc-card.ch-lvl-1 {
+    border-color: #c3e3e5;
+  }
+
+  button {
+    margin: 0;
+  }
+  [mdcIconButton] {
+    padding: 0.5em;
+  }
+  [mdcButton]{
+    font-size: 0.875em;
+    padding: 0px;
+    
+  }
+  [mdcButton].btnTitle{
+    min-width: 54px;
+    width:54px;
+  }
+  .mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box){
+    margin-top: 0;
+  }

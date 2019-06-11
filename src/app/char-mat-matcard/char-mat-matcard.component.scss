@@ -1,0 +1,56 @@
+@import '../styles/custom.scss';
+[mdcCard] {
+  min-width: 300px;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0.5em;
+  color: $mdc-theme-primary;
+  padding: 0.25em;
+  img {
+    float: left;
+    max-width: 48px;
+    max-height: 48px;
+    width: auto;
+    height: auto;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .matcard-item {
+    padding: 0.25em 1em;
+    min-width: 150px;
+    width: 160px;
+    max-width: 100%;
+    border: 0.125em solid rgba(0, 0, 0, 0.125);
+    border-radius: 2em 0.5em 0.5em 2em;
+    font-size: 0.875rem;
+  }
+
+  [mdcCardActions] {
+    min-width: 300px;
+    width: 300px;
+  }
+
+  .place-holder {
+    height: 0px;
+    border: none;
+  }
+
+  .m-lvl-5 {
+    border-color: #d0694e;
+  }
+  .m-lvl-4 {
+    border-color: #f9ce8c;
+  }
+  .m-lvl-3 {
+    border-color: #589bad;
+  }
+  .m-lvl-2 {
+    border-color: #7ebc59;
+  }
+  .m-lvl-1 {
+    border-color: #c3e3e5;
+  }
+}

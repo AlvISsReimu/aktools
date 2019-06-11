@@ -1,0 +1,32 @@
+@import "../styles/custom.scss";
+
+.img-logos {
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+}
+a:not([class]) {
+  text-decoration: none;
+  color: $mdc-theme-primary;
+}
+
+p {
+  color: $mdc-theme-primary;
+}
+
+h1,h2,h3,h4,h5 {
+  font-weight: 600;
+}
+
+.contributor{
+  padding: 0.5em;
+}
+
+.contributor img{
+  border-radius: 50%;
+  max-height: 64px;
+  max-width: 64px;
+  height: auto;
+  width: auto;
+}

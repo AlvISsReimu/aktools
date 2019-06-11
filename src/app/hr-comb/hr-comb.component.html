@@ -1,0 +1,14 @@
+<div mdcCard *ngFor="let comb of hrcombs; trackBy: trackComb">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div>
+    <button mdcButton outlined class="btn-tag" *ngFor="let tag of comb.tags">{{tag}}</button>
+  </div>
+  <div fxShow.lt-sm="false">
+    <div mdcChip raised>{{comb.score| number : '1.2-2'}}</div>
+  </div>
+  </div>
+  <hr mdcListDivider>
+  <div >
+      <button mdcButton raised [ngClass]="'char-lvl-'+char.level" *ngFor="let char of comb.possible">{{char.name}}</button>
+  </div>
+</div>

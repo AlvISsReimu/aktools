@@ -1,0 +1,58 @@
+@import "../styles/custom.scss";
+
+.char-lvl-6 {
+  background-color: #d0694e;
+  color: white;
+}
+
+.char-lvl-5 {
+  background-color: #F9CE8C;
+  color: #1A1D1E;
+}
+
+.char-lvl-4 {
+  background-color: #589BAD;
+  color: white;
+}
+
+.char-lvl-3 {
+  background-color: #7EBC59;
+  color: white;
+}
+
+.char-lvl-2 {
+  background-color: #C3E3E5;
+  color: #1A1D1E;
+}
+
+.char-lvl-1 {
+  background-color: #1A1D1E;
+  color: white;
+}
+
+table{
+  width: 100%;
+}
+th {
+  background: $color-3;
+  color: #fff;
+  font-size: 1em;
+  padding: 0px;
+}
+
+.mdc-card {
+  margin: 8px 4px;
+}
+
+// .btn-tag {
+//   background-color: $mdc-theme-secondary;
+//   color: #fff;
+// }
+
+.mdc-list-divider {
+  margin: 2px;
+}
+
+.mdc-chip {
+  margin: 8px;
+}

@@ -1,0 +1,103 @@
+@import "../styles/custom.scss";
+
+$img-size: 48px;
+
+.img-icon-box {
+  height: $img-size;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  margin: 0.25em;
+}
+.img-icon {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  float: left;
+}
+
+.input-field {
+  width: 100%;
+  margin: 0.25em 0;
+}
+
+input,
+select {
+  text-align: center;
+}
+.mdc-button--dense {
+  min-width: 20px;
+  width: 20px;
+  margin: 0;
+  padding: 0;
+}
+.mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box) {
+  margin: 0;
+}
+
+[mdcCard] {
+  width: 100%;
+  height: 130px;
+  min-width: 170px;
+  max-height: 170px;
+  padding: 0.25em;
+  margin: 0.25em 0.125em;
+  border: 0.125em solid rgba(0, 0, 0, 0.125);
+  border-radius: 2em 0.5em 2em 0.5em;
+
+  .card-title {
+    color: $mdc-theme-primary;
+    text-align: start;
+    font-size: 0.875em;
+    font-weight: 700;
+  }
+
+  .material-source {
+    color: $mdc-theme-secondary;
+    font-size: 0.75em;
+    text-align: end;
+  }
+  .material-detail {
+    color: $mdc-theme-primary;
+    padding: 0;
+  }
+}
+
+.mdc-card.m-lvl-5 {
+  border-color: #d0694e;
+}
+.mdc-card.m-lvl-4 {
+  border-color: #f9ce8c;
+}
+.mdc-card.m-lvl-3 {
+  border-color: #589bad;
+}
+.mdc-card.m-lvl-2 {
+  border-color: #7ebc59;
+}
+.mdc-card.m-lvl-1 {
+  border-color: #c3e3e5;
+}
+.mdc-card.op-card {
+  opacity: 0.4;
+}
+
+.need-button {
+  font-size: 1.25em;
+  margin: 0;
+  text-align: end;
+  align-items: flex-end;
+  color: $color-1;
+  font-weight: bold;
+  min-width: 0px;
+}
+.need-button::before {
+  position: inherit;
+}
+
+.btnMerge{
+  width:32px;
+  height:32px;
+}

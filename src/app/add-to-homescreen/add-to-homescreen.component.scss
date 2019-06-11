@@ -1,0 +1,10 @@
+@import "../styles/custom.scss";
+
+p {
+  color: $mdc-theme-primary;
+}
+img {
+  max-width: 300px;
+  width: auto;
+  height: auto;
+}

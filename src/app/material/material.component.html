@@ -1,0 +1,47 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center">
+  <div fxLayout="row" fxFlex="100" fxFlex.gt-sm="50" fxLayoutAlign="end center" fxLayoutGap="1%" class="options-box">
+    <div mdcFormField>
+      <button mdcButton raised dense (click)="reset()">重置</button>
+    </div>
+    <div mdcFormField>
+      <div mdcSwitch>
+        <input mdcSwitchInput type="checkbox" [(ngModel)]="options.showOnly3plus" (change)="onOptionChange()" />
+      </div>
+      <label mdcFormFieldLabel>仅3★及以上</label>
+    </div>
+    <div mdcFormField>
+      <div mdcSwitch>
+        <input mdcSwitchInput type="checkbox" [(ngModel)]="options.filtered" (change)="onOptionChange()" />
+      </div>
+      <label mdcFormFieldLabel>过滤无关材料</label>
+    </div>
+  </div>
+  <div fxLayout="row" fxFlex="100" fxFlex.gt-sm="50" fxLayoutAlign="start center" fxLayoutGap="1%" class="options-box">
+    <div mdcFormField>
+      <div mdcSwitch>
+        <input mdcSwitchInput type="checkbox" [(ngModel)]="options.showMat" (change)="onOptionChange()" />
+      </div>
+      <label mdcFormFieldLabel>精英材料</label>
+    </div>
+    <div mdcFormField>
+      <div mdcSwitch>
+        <input mdcSwitchInput type="checkbox" [(ngModel)]="options.showBook" (change)="onOptionChange()" />
+      </div>
+      <label mdcFormFieldLabel>技能书</label>
+    </div>
+    <div mdcFormField>
+      <div mdcSwitch>
+        <input mdcSwitchInput type="checkbox" [(ngModel)]="options.showChip" (change)="onOptionChange()" />
+      </div>
+      <label mdcFormFieldLabel>芯片</label>
+    </div>
+  </div>
+  <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="start start">
+    <ng-container *ngFor="let item of items; trackBy:trackItem">
+      <div fxFlex="50" fxFlex.gt-xs="33" fxFlex.gt-sm="25" fxFlex.gt-md="16" class="padding-025"
+        [hidden]="((options.filtered&&(!(data[item.name].have||data[item.name].need||data[item.name].lack)))||(options.showOnly3plus&&item.id.startsWith('30')&&(item.rarity<3))||(!options.showMat&&(item.id.startsWith('30'))||(!options.showBook&&(item.id.startsWith('33'))||(!(options.showChip)&&(item.id.startsWith('32'))))))">
+        <app-material-card [item]="item" [itemdata]="data[item.name]" (dataChange)="onDataChange($event)" (reportMerge)="onMatMerge($event)"></app-material-card>
+      </div>
+    </ng-container>
+  </div>
+</div>

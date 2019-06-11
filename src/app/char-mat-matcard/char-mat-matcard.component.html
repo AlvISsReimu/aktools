@@ -1,0 +1,21 @@
+<div mdcCard fxLayout="row wrap">
+  <div mdcCardActions fullBleed fxFlex="100">
+    <a mdcButton (click)="toMaterialCalc()">
+      保存并导入材料计算器 <i class="material-icons" aria-hidden="true">arrow_forward</i>
+    </a>
+  </div>
+  <div class="matcard-item place-holder" fxFlex="100"></div>
+  <ng-container *ngFor="let m of smats">
+    <div class="matcard-item m-lvl-{{allmats[m.id].rarity}}" fxFlex="50" fxFlex.gt-xs="33" fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="matcard-item-image">
+        <img src="../../assets/img/material/{{allmats[m.id].icon}}.png" />
+      </div>
+      <div class="mat-card-item-title">
+        <p>{{allmats[m.id].name}}</p>
+      </div>
+      <div class="mat-card-item-need">
+        <p>{{m.count}}</p>
+      </div>
+    </div>
+  </ng-container>
+</div>

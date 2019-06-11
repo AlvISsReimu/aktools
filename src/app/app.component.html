@@ -1,0 +1,80 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<aside [mdcDrawerContainer]="temporary" [(open)]="drawerOpen">
+  <nav mdcDrawer (click)="toggleDrawer()">
+    <!-- <div mdcDrawerToolbarSpacer>
+      <a mdcToolbarTitle class="router-active" routerLink="/">明日方舟工具箱</a>
+    </div> -->
+    <div mdcDrawerHeader>
+      <div mdcDrawerHeaderContent>
+        <div fxLayout="row" class="drawer-header">
+          <img class="img-header" src="../assets/icons/icon-512x512.png" />
+          <div fxLayout="column" fxLayoutAlign="space-around end">
+            <div>
+              <a mdcToolbarTitle class="router-active" routerLink="/">明日方舟工具箱</a><br />
+            </div>
+            <div>
+              <a mdcToolbarTitle class="router-active small">by 一只灰猫</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div mdcDrawerContent mdcListGroup>
+      <nav mdcList>
+        <a mdcListItem routerLink="/hr">
+          <i mdcListItemGraphic class="material-icons" aria-hidden="true">person_add</i>公开招募
+        </a>
+        <a mdcListItem routerLink="/lvlup">
+          <i mdcListItemGraphic class="material-icons" aria-hidden="true">trending_up</i>升级计算
+        </a>
+        <a mdcListItem routerLink="/material">
+          <i mdcListItemGraphic class="material-icons" aria-hidden="true">add_shopping_cart</i>精英材料
+        </a>
+        <a mdcListItem routerLink="/charmat">
+          <i mdcListItemGraphic class="material-icons" aria-hidden="true">nature_people</i>干员材料
+        </a>
+      </nav>
+      <hr mdcListDivider>
+      <nav mdcList>
+        <a mdcListItem href="https://github.com/graueneko/">
+          <i mdcListItemGraphic class="material-icons" aria-hidden="true">email</i>联系作者
+        </a>
+        <a mdcListItem href="https://github.com/graueneko/aktools/">
+          <i mdcListItemGraphic class="material-icons" aria-hidden="true">people</i>加入我们
+        </a>
+      </nav>
+    </div>
+  </nav>
+</aside>
+<header mdcToolbar>
+  <div mdcToolbarRow>
+    <section mdcToolbarSection alignStart>
+      <a href="javascript:void(0)" mdcToolbarIcon class="material-icons" (click)="toggleDrawer()">menu</a>
+      <div class="toolbar-titles"><img class="img-title" src="../assets/icons/icon-512x512.png" /></div>
+      <div fxLayout="row" fxShow="false" fxShow.gt-md="true" class="toolbar-titles">
+        <span><a mdcToolbarTitle routerLink="/" routerLinkActive="router-active">明日方舟工具箱</a></span>
+        <span><a mdcToolbarTitle routerLink="/hr" routerLinkActive="router-active">公开招募</a></span>
+        <span><a mdcToolbarTitle routerLink="/lvlup" routerLinkActive="router-active">升级计算</a></span>
+        <span><a mdcToolbarTitle routerLink="/material" routerLinkActive="router-active">精英材料</a></span>
+        <span><a mdcToolbarTitle routerLink="/charmat" routerLinkActive="router-active">干员材料</a></span>
+      </div>
+    </section>
+    <section mdcToolbarSection alignEnd>
+      <a mdcToolbarIcon class="material-icons" href="/homescreen" aria-label="Add to home screen"
+        alt="Add to home screen">add</a>
+      <a mdcToolbarIcon class="material-icons" *ngIf="nav.share" aria-label="Share" alt="Share"
+        (click)="doShare()">share</a>
+      <a mdcToolbarIcon class="material-icons" *ngIf="!nav.share" aria-label="Copy" alt="Copy" ngxClipboard
+        [cbContent]="'明日方舟工具箱 - '+baseUrl" (cbOnSuccess)="showSnackBar('链接已复制~','好的')">content_copy</a>
+      <a mdcToolbarIcon class="material-icons" aria-label="Update" alt="Update" (click)="doUpdate()">update</a>
+      <a mdcToolbarIcon class="material-icons" aria-label="Help" alt="Help"
+        (click)="showSnackBar('本功能待补充~','好的')">help</a>
+      <a mdcToolbarIcon class="material-icons" aria-label="Delete" alt="Delete" (click)="doClear()">delete</a>
+
+    </section>
+  </div>
+</header>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
