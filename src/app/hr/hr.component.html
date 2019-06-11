@@ -1,7 +1,9 @@
 <div fxLayout="row wrap" class="hr-viewport">
   <div fxFlex="100%" fxFlex.gt-md="40%" [ngClass.gt-md]="{'float-box': true}">
-    <app-hr-tags [tagrows]="hrdata.tagrows" (reportSelectedTags)="onSelectTagChanged($event)"
-      (reportSelectedStars)="onSelectStarChanged($event)"></app-hr-tags>
+    <div [ngClass.gt-md]="{'tagrows-container':true}">
+      <app-hr-tags [tagrows]="hrdata.tagrows" (reportSelectedTags)="onSelectTagChanged($event)"
+        (reportSelectedStars)="onSelectStarChanged($event)"></app-hr-tags>
+    </div>
   </div>
   <div fxFlex="100%" fxFlex.gt-md="60%" fxFlexOffset.gt-md="40%">
     <app-hr-comb [hrcombs]="hrdata.combs"></app-hr-comb>
